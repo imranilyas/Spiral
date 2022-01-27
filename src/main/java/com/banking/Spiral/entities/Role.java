@@ -18,13 +18,17 @@ public class Role {
             generator = "role_sequence"
     )
     private long role_id;
-    private String role;
+    private String role_name;
+
+    // Relationship with User
+    @OneToOne(mappedBy = "role")
+    public User user;
 
     public Role() {}
 
-    public Role(long role_id, String role) {
+    public Role(long role_id, String role_name) {
         this.role_id = role_id;
-        this.role = role;
+        this.role_name = role_name;
     }
 
     public long getRole_id() {
@@ -35,11 +39,11 @@ public class Role {
         this.role_id = role_id;
     }
 
-    public String getRole() {
-        return role;
+    public String getRole_name() {
+        return role_name;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setRole_name(String role_name) {
+        this.role_name = role_name;
     }
 }
