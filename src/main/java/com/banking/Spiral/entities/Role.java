@@ -17,7 +17,7 @@ public class Role {
             strategy = GenerationType.SEQUENCE,
             generator = "role_sequence"
     )
-    public long role_id;
+    private long role_id;
 
     @Enumerated(EnumType.STRING)
     private String role;
