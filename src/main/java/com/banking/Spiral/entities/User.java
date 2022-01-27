@@ -9,8 +9,12 @@ public class User {
     // User ID is the same as customer id
     // After creating a customer, the id will be used to make a user
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long user_id;
     private String password;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "role", referencedColumnName = "role_id")
     private Role role;
 
     public User() {};
