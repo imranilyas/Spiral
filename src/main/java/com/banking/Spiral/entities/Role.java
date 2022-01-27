@@ -18,9 +18,14 @@ public class Role {
             generator = "role_sequence"
     )
     private long role_id;
-
-    @Enumerated(EnumType.STRING)
     private String role;
+
+    public Role() {}
+
+    public Role(long role_id, String role) {
+        this.role_id = role_id;
+        this.role = role;
+    }
 
     public long getRole_id() {
         return role_id;
@@ -35,13 +40,6 @@ public class Role {
     }
 
     public void setRole(String role) {
-        this.role = role;
-    }
-
-    public Role() {}
-
-    public Role(long role_id, String role) {
-        this.role_id = role_id;
         this.role = role;
     }
 }

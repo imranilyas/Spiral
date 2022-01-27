@@ -27,25 +27,27 @@ public class Customers {
     private String name;
     private String address;
     private String email;
-    private static Date dob;
+    private Date dob;
 
     public Customers() {}
 
-    public Customers(long pan, long citizen_uid, String name, String address, String email) {
+    public Customers(long pan, long citizen_uid, String name, String address, String email, Date dob) {
         this.pan = pan;
         this.citizen_uid = citizen_uid;
         this.name = name;
         this.address = address;
         this.email = email;
+        this.dob = dob;
     }
 
-    public Customers(long customer_id, long pan, long citizen_uid, String name, String address, String email) {
+    public Customers(long customer_id, long pan, long citizen_uid, String name, String address, String email, Date dob) {
         this.customer_id = customer_id;
         this.pan = pan;
         this.citizen_uid = citizen_uid;
         this.name = name;
         this.address = address;
         this.email = email;
+        this.dob = dob;
     }
 
     public long getCustomer_id() {
@@ -96,11 +98,11 @@ public class Customers {
         this.email = email;
     }
 
-    public static Date getDob() {
+    public Date getDob() {
         return dob;
     }
 
-    public static void setDob(Date dob) {
-        Customers.dob = dob;
+    public void setDob(Date dob) {
+        this.dob = dob;
     }
 }
