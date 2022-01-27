@@ -5,7 +5,7 @@ import java.sql.Date;
 
 @Entity
 @Table
-public class Customers {
+public class Customer {
 
     @Id
     @SequenceGenerator(
@@ -29,9 +29,9 @@ public class Customers {
     private String email;
     private Date dob;
 
-    public Customers() {}
+    public Customer() {}
 
-    public Customers(long pan, long citizen_uid, String name, String address, String email, Date dob) {
+    public Customer(long pan, long citizen_uid, String name, String address, String email, Date dob) {
         this.pan = pan;
         this.citizen_uid = citizen_uid;
         this.name = name;
@@ -40,7 +40,7 @@ public class Customers {
         this.dob = dob;
     }
 
-    public Customers(long customer_id, long pan, long citizen_uid, String name, String address, String email, Date dob) {
+    public Customer(long customer_id, long pan, long citizen_uid, String name, String address, String email, Date dob) {
         this.customer_id = customer_id;
         this.pan = pan;
         this.citizen_uid = citizen_uid;

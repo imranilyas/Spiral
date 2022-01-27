@@ -5,7 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table
-public class Transactions {
+public class Transaction {
 
     @Id
     @SequenceGenerator(
@@ -23,16 +23,16 @@ public class Transactions {
     private String withdraw_deposit;
     private double balance;
 
-    public Transactions() {}
+    public Transaction() {}
 
-    public Transactions(long reference_number, Date time, String withdrawl_deposit, double balance) {
+    public Transaction(long reference_number, Date time, String withdrawl_deposit, double balance) {
         this.reference_number = reference_number;
         this.time = time;
         this.withdraw_deposit = withdrawl_deposit;
         this.balance = balance;
     }
 
-    public Transactions(long transaction_id, long reference_number, Date time, String withdrawl_deposit, double balance) {
+    public Transaction(long transaction_id, long reference_number, Date time, String withdrawl_deposit, double balance) {
         this.transaction_id = transaction_id;
         this.reference_number = reference_number;
         this.time = time;
