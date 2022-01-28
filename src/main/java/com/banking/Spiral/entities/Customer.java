@@ -2,6 +2,7 @@ package com.banking.Spiral.entities;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.Set;
 
 @Entity
 @Table
@@ -31,6 +32,9 @@ public class Customer {
 
     @OneToOne(mappedBy = "customer")
     private User user;
+
+    @OneToMany(mappedBy = "customer")
+    private Set<Account> accounts;
 
     public Customer() {}
 

@@ -29,18 +29,18 @@ public class Transaction {
 
     public Transaction() {}
 
-    public Transaction(long reference_number, Date time, String withdrawl_deposit, double balance) {
+    public Transaction(long reference_number, Date time, String withdraw_deposit, double balance) {
         this.reference_number = reference_number;
         this.time = time;
-        this.withdraw_deposit = withdrawl_deposit;
+        this.withdraw_deposit = withdraw_deposit;
         this.balance = balance;
     }
 
-    public Transaction(long transaction_id, long reference_number, Date time, String withdrawl_deposit, double balance) {
+    public Transaction(long transaction_id, long reference_number, Date time, String withdraw_deposit, double balance) {
         this.transaction_id = transaction_id;
         this.reference_number = reference_number;
         this.time = time;
-        this.withdraw_deposit = withdrawl_deposit;
+        this.withdraw_deposit = withdraw_deposit;
         this.balance = balance;
     }
 
