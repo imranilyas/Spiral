@@ -29,6 +29,9 @@ public class Customer {
     private String email;
     private Date dob;
 
+    @OneToOne(mappedBy = "customer")
+    private User user;
+
     public Customer() {}
 
     public Customer(long pan, long citizen_uid, String name, String address, String email, Date dob) {

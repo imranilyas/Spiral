@@ -14,7 +14,11 @@ public class User {
     private String password;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "role", referencedColumnName = "role_id")
+    @JoinColumn(name = "customer", nullable = false)
+    private Customer customer;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "role", nullable = false)
     private Role role;
 
     public User() {};
