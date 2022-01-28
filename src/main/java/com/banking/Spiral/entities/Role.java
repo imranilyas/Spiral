@@ -22,7 +22,7 @@ public class Role {
 
     // Relationship with User
     @OneToOne(mappedBy = "role")
-    public User user;
+    private User user;
 
     public Role() {}
 
