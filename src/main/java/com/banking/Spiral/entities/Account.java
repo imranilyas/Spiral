@@ -1,6 +1,7 @@
 package com.banking.Spiral.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
@@ -20,6 +21,9 @@ public class Account {
     private long account_number;
     private long customer_id;
     private double balance;
+
+    @OneToMany(mappedBy = "account")
+    private List<Transaction> transactions;
 
     public Account() {}
 

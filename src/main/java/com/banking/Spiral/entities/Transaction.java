@@ -23,6 +23,10 @@ public class Transaction {
     private String withdraw_deposit;
     private double balance;
 
+    @ManyToOne
+    @JoinColumn(name = "account_number", nullable = false)
+    private Account account;
+
     public Transaction() {}
 
     public Transaction(long reference_number, Date time, String withdrawl_deposit, double balance) {
