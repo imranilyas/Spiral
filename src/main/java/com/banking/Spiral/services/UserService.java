@@ -1,6 +1,8 @@
 package com.banking.Spiral.services;
 
 import com.banking.Spiral.entities.User;
+import com.banking.Spiral.repositories.CustomerRepository;
+import com.banking.Spiral.repositories.RoleRepository;
 import com.banking.Spiral.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,10 +14,14 @@ import java.util.List;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final CustomerRepository customerRepository;
+    private final RoleRepository roleRepository;
 
     @Autowired
-    public UserService(UserRepository repo) {
-        this.userRepository = repo;
+    public UserService(UserRepository userRepository, CustomerRepository customerRepository, RoleRepository roleRepository) {
+        this.userRepository = userRepository;
+        this.customerRepository = customerRepository;
+        this.roleRepository = roleRepository;
     }
 
     // Get All Users
