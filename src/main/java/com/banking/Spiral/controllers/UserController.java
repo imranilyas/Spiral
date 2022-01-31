@@ -44,5 +44,5 @@ public class UserController {
     public boolean deleteUser(@PathVariable("userID") Long userID) {
         return userService.deleteUser(userID);
     }
-    
+
 }
