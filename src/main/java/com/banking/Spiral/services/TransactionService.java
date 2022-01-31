@@ -1,6 +1,7 @@
 package com.banking.Spiral.services;
 
 import com.banking.Spiral.entities.Transaction;
+import com.banking.Spiral.repositories.AccountRepository;
 import com.banking.Spiral.repositories.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,10 +13,12 @@ import java.util.List;
 public class TransactionService {
 
     private final TransactionRepository transactionRepository;
+    private final AccountRepository accountRepository;
 
     @Autowired
-    public TransactionService(TransactionRepository repo) {
-        this.transactionRepository = repo;
+    public TransactionService(TransactionRepository transactionRepository, AccountRepository accountRepository) {
+        this.transactionRepository = transactionRepository;
+        this.accountRepository = accountRepository;
     }
 
     public List<Transaction> getAllTransactions() {
