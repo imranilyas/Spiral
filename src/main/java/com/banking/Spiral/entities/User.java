@@ -23,6 +23,12 @@ public class User {
 
     public User() {};
 
+    // For logging in
+    public User(long user_id, String password) {
+        this.user_id = user_id;
+        this.password = password;
+    }
+
     public User(long user_id, String password, Role role) {
         this.user_id = user_id;
         this.password = password;
