@@ -2,6 +2,7 @@ package com.banking.Spiral.services;
 
 import com.banking.Spiral.entities.Account;
 import com.banking.Spiral.repositories.AccountRepository;
+import com.banking.Spiral.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +13,12 @@ import java.util.List;
 public class AccountService {
 
     private final AccountRepository accountRepository;
+    private final CustomerRepository customerRepository;
 
     @Autowired
-    public AccountService(AccountRepository repo) {
-        accountRepository = repo;
+    public AccountService(AccountRepository accountRepository, CustomerRepository customerRepository) {
+        this.accountRepository = accountRepository;
+        this.customerRepository = customerRepository;
     }
 
     // Get All Accounts
